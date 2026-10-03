@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabaidi — Apprendre le lao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao+Looped:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap hero-in">
+    <div class="brand">
+      <span class="logo">ລາວ</span>
+      <div><h1>Sabaidi</h1><p>Le lao vivant, celui qu'on parle vraiment à Vientiane.</p></div>
+    </div>
+    <div class="voice-panel">
+      <label><span id="voice-dot" class="dot"></span><select id="voice" aria-label="Voix"></select></label>
+      <label class="rate">🐢<input id="rate" type="range" min="0.5" max="1.2" step="0.05" value="0.85" aria-label="Vitesse">🐇<span id="rate-val">×0.85</span></label>
+    </div>
+  </div>
+  <div class="wrap stats">
+    <div><b id="stat-words"></b><span>mots essentiels</span></div>
+    <div><b id="stat-phrases"></b><span>phrases du quotidien</span></div>
+    <div><b id="stat-lessons"></b><span>leçons A0 → C1</span></div>
+  </div>
+  <nav class="wrap tabs">
+    <button data-tab="vocab">📚 Vocabulaire</button>
+    <button data-tab="phrases">💬 Phrases</button>
+    <button data-tab="course">🎓 Cours de lao</button>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section id="vocab">
+    <div class="toolbar">
+      <input class="search" type="search" placeholder="Rechercher en lao, phonétique ou français…">
+      <button class="btn ghost mask">🙈 Mode quiz</button>
+      <button class="btn primary auto">▶ Écoute auto</button>
+      <span class="count"></span>
+    </div>
+    <div class="chips"></div>
+    <div class="list grid"></div>
+  </section>
+
+  <section id="phrases" hidden>
+    <div class="toolbar">
+      <input class="search" type="search" placeholder="Rechercher une phrase…">
+      <button class="btn ghost mask">🙈 Mode quiz</button>
+      <button class="btn primary auto">▶ Écoute auto</button>
+      <span class="count"></span>
+    </div>
+    <div class="chips"></div>
+    <div class="list rows"></div>
+  </section>
+
+  <section id="course" hidden>
+    <div class="course">
+      <aside class="side">
+        <div class="progress"><div class="bar"><i id="progress-bar"></i></div><small id="progress-txt"></small></div>
+        <div id="lesson-nav"></div>
+      </aside>
+      <article id="lesson"></article>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">ຮຽນພາສາລາວ · Clique sur n'importe quel mot lao pour l'entendre.</footer>
+<div id="toast" role="status"></div>
+<script src="dist/app.js"></script>
+</body>
+</html>
